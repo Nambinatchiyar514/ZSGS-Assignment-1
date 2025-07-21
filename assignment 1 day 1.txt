@@ -1,0 +1,186 @@
+import java.util.Scanner;
+/*Day-1 Assignment Questions:
+1. Write a code to illustrate the various scope of variables(static, local, instance, block, final variables)?
+2. Write a program in which, declare all data types like integer, double, float, long integer, character and byte data and print them.
+3. Write a program to find the maximum of two numbers using ternary operator.
+4. Write a program to check whether the given two numbers are equal or not w/o using comparison operator?
+5. Write a program that illustrate the execution order of static block and initializer block?
+6. Write a program that illustrate the Explicit type casting?
+7. Write a program to check if a number is a power of 2?
+8. Write a program to find the first set bit of a number?
+9. Write a class Employee with attributes empId, name, department and salary and define a parametrized constructor Employee(int empId, String name, String department, double salary) and assign these variables to instance variables accordingly and display them?
+10. Write a program to check whether the object is an instance of a particular class?*/
+
+
+//1. Write a code to illustrate the various scope of variables(static, local, instance, block, final variables)?
+
+class colleage{
+    static int age=23;	//Static variable
+	//final int rollNo=123; // Instance Variable at the same time it is final variable so not changed..
+	int rollNo;
+	public static void main(String[] args){
+		System.out.println(" Age : " + age);
+		String Name="siva "; //Local Variable
+		System.out.println(" Name: " + Name);
+		colleage s1=new colleage();
+		s1.rollNo=121;
+		System.out.println(" Roll No: " + s1.rollNo);
+		  // blocksss
+	    /*{
+			int a=10;
+			int b=5;
+		}
+		int total=a+b;
+		System.out.println(total);*/
+	}
+}
+
+//2. Write a program in which, declare all data types like integer, double, float, long integer, character and byte data and print them.
+
+class Datatype{
+	public static void main(String [] args){
+		int number = 15;
+		double value = 1.5593837;
+		float point = 2.4f;
+		long  num = 1000000;
+		char name = 'a';
+		byte size = 2;
+		System.out.println("int:"+number);
+		System.out.println("double:"+value);
+		System.out.println("float:"+ point);
+		System.out.println("long:"+ num);
+		System.out.println("char:"+ name);
+		System.out.println("byte;"+size);
+	}
+}
+// 3. Write a program to find the maximum of two numbers using ternary operator.
+   
+ class ternary{
+	 public static void main(String [] args){
+		 int a = 10 ;
+		 int b = 30 ;
+		int maxvalue = (a > b) ? a : b ;
+		System.out.println(maxvalue);
+	 }
+ }
+// 4. Write a program to check whether the given two numbers are equal or not w/o using comparison operator?
+  
+  class Equal{
+	 public static void main(String [] args){
+		 int x = 10 ;
+		 int y = 10 ;
+		if((x ^ y) == 0){
+			System.out.println("this number equal");
+		} else {
+			System.out.println("not equal");
+		}	
+	 }
+ }
+ //5. Write a program that illustrate the execution order of static block and initializer block?
+ 
+ class Execution{
+	 { 
+	   System.out.println("initializer block ");
+	 }
+	 static{
+		 System.out.println("Nandhini");
+	 }
+	public static void main(String[] args){
+		Execution name = new Execution();
+	}
+ }
+ // 6. Write a program that illustrate the Explicit type casting?
+
+class Explicit{
+    public static void main(String[] args){
+        double a =10.6;
+        int b =(int)a;
+		System.out.println(b);
+    }
+} 	
+//7. Write a program to check if a number is a power of 2?
+
+class Power{
+	static boolean isPowerofTwo(int n) {
+        if (n <= 0)
+            return false;
+        while (n > 1) {
+            if (n % 2 != 0)
+                return false;
+            n = n / 2;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        int n = 16;
+        if (isPowerofTwo(n)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+	}
+}
+// 8. Write a program to find the first set bit of a number?
+	
+	class firstbit{
+	public static void main(String[] args)
+	{
+	
+		int number = 8;
+		int temp = number;
+		String binary="";
+		if(temp == 0){
+			binary = "0";
+		}
+		while(temp > 0){
+			int remainder = temp % 2;
+			binary = remainder + binary;
+			temp = temp /2;
+		}
+		System.out.println(binary);
+		int count  = 1;
+		for(int i =binary.length()-1;i>0;i--){
+			if(binary.charAt(i) == '0'){
+				count ++;
+			}else{
+				break;
+			}
+			
+		}
+		System.out.println(count);
+	}
+}
+
+
+//9. Write a class Employee with attributes empId, name, department and salary and define a parametrized constructor Employee(int empId, String name, String department, double salary) and assign these variables to instance variables accordingly and display them?	
+  class Employee{
+	       int empId;
+		  String name;       
+		  String department ;
+		  double salary ;
+	public Employee (int empId,String name,String department,double salary){
+		this.empId=empId;
+		this.name=name;
+		this.department=department;
+		this.salary=salary;
+	}
+	public void Display(){
+		System.out.println("EmployeeId "+ empId);
+		System.out.println("Employeename "+ name);
+		System.out.println("Employee department " + department);
+		System.out.println("Employe salary " + salary);
+	}
+	public static void main (String[] args){
+		Employee emp = new Employee(1234,"Nandhini","cs",50000);
+			emp.Display();
+	}
+}
+
+// 10. Write a program to check whether the object is an instance of a particular class?
+
+class  Particular{
+	public static void main(String []args){
+		String name  = " vijay" ; 
+		System.out.println(name instanceof String ); 
+	}
+}
