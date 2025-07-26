@@ -26,7 +26,7 @@ class colleage{
 		s1.rollNo=121;
 		System.out.println(" Roll No: " + s1.rollNo);
 		  // blocksss
-	    /*{
+	    {
 			int a=10;
 			int b=5;
 		}
